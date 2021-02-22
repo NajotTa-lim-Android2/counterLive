@@ -7,7 +7,7 @@ import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
-
+    var count = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -15,10 +15,27 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val countBtn = findViewById<Button>(R.id.btn_count)
+        val incrementBtn = findViewById<Button>(R.id.btn_increment)
+        val decrementBtn = findViewById<Button>(R.id.btn_decrement)
         val txtCount = findViewById<TextView>(R.id.tv_count)
 
 
+        incrementBtn.setOnClickListener {
+
+            count++
+
+            txtCount.setText(count.toString())
+
+        }
+
+        decrementBtn.setOnClickListener {
+
+            count--
+
+            txtCount.setText(count.toString())
+
+
+        }
 
 
     }
